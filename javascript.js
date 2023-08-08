@@ -2,16 +2,57 @@ const choiceArray = ["Rock", "Paper", "Scissors"];
 let playerPoints = 0;
 let computerPoints = 0;
 
-game();
+const Rock = document.querySelector('#Rock');
+const Paper = document.querySelector('#Paper');
+const Scissors = document.querySelector('#Scissors');
+const msg = document.querySelector('#message');
+const container = document.querySelector('#container');
+const content = document.createElement('div');
 
-function game() {
-    const loopTime = prompt("How many rounds do you want to play?", 5);
+let choice = null;
+let computerSelection = null;
+
+Rock.addEventListener('click', function (e) {
+    choice = e.target.innerText; 
+    computerSelection = getComputerChoice();
+    console.log(computerSelection);
+    
+    //msg.classList.toggle('reveal');
+    content.textContent = choice;
+    
+    
+    playRound(choice, getComputerChoice());
+    
+
+});
+
+Paper.addEventListener('click', function (e) {
+    choice = e.target.innerText; 
+    //msg.classList.toggle('reveal');
+    content.textContent = choice;
+});
+
+Scissors.addEventListener('click', function (e) {
+    choice = e.target.innerText; 
+    //msg.classList.toggle('reveal');
+    content.textContent = choice;
+});
+
+content.classList.add('content');
+content.textContent = choice;
+container.appendChild(content);
+
+//game(choice);
+
+function game(choice) {
+    //const loopTime = prompt("How many rounds do you want to play?", 5);
+    const loopTime = 5;
     
     console.log("-------======== ROCK PAPER SISSORS ========-------");
     for (let i = 0; i < loopTime; i++) { 
         console.log("===ROUND " + (i+1) + "===")
         let computerSelection = getComputerChoice();
-        let playerSelection = getPlayerInput();
+        let playerSelection = choice;
         let computerWord = choiceArray[computerSelection];
         let playerWord = choiceArray[playerSelection];
 
