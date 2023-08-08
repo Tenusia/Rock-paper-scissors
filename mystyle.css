@@ -5,3 +5,13 @@
 .reveal{
     visibility: visible;
 }
+
+.player{
+    border-color: black;
+    background-color: aquamarine;
+}
+
+.computer{
+    border-color: blue;
+    background-color: blueviolet;
+}
