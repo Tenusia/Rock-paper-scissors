@@ -6,12 +6,110 @@
     visibility: visible;
 }
 
-.player{
-    border-color: black;
-    background-color: aquamarine;
+.wrapper{
+    
+    flex-direction: column;
+    border-style: solid;
+    border-color: blueviolet;
 }
 
-.computer{
-    border-color: blue;
-    background-color: blueviolet;
+#header{
+    display: flex;
+    background-color: rgb(52, 163, 167);
+    font-size: xx-large;
+    justify-content: center;
+    padding: 20px;
+}
+
+#container{
+    padding: 2%;
+    margin: 3%;
+}
+
+#buttonGroup{
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    padding: 3%;
+    border-style: solid;
+    border-color: blueviolet;
+    background-color: rgb(125, 222, 225);
+}
+
+button{
+    background-color: white;
+    color: black;
+    border: 2px solid #191eba;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 14px 40px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #2d3568; /* Green */
+    color: white;
+}
+
+h1{
+    margin: 1%;
+}
+
+#choiceHeader{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#choiceResult{
+    display:flex;
+    justify-content: space-evenly;
+    font-size: xx-large;
+    padding: 3%;
+    border-style: solid;
+    border-color: blueviolet;
+    background-color: rgb(125, 222, 225);
+}
+
+#winnerResult{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    padding: 3%;
+    margin: 5% 0 10% 0;
+
+    border-style: solid;
+    border-color: blueviolet;
+    background-color: rgb(33, 117, 120);
+}
+
+#scoreHeader{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#score{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: xx-large;
+    padding: 3%;
+    border-style: solid;
+    border-color: blueviolet;
+    background-color: rgb(125, 222, 225);
+}
+
+#results{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    margin: 5% 0 0% 0;
+    padding: 3%;
+    border-style: solid;
+    border-color: blueviolet;
+    background-color: rgb(33, 117, 120);
+}
+
+#resetCont{
+    display: flex;
+    padding: 5% 0 5% 0;
+    justify-content: center;
 }

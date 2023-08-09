@@ -7,19 +7,33 @@
 </head>
 <body>
   <div class="wrapper">
-    <button id="Rock">Rock</button>
-    <button id="Paper">Paper</button>
-    <button id="Scissors">Scissors</button>
-  
-    <div id="message" class="hide">
-      You won't see this message until after you clicked a button.
+    <div id="header">
+      Rock, Paper, Scissors!
     </div>
-
-    <div id="container"></div>
-    <div id="score"></div>
-    <div id="results"></div>
-
-    <button id="Reset" class="hide">Reload</button>
+    <div id="container">
+      <div id="buttonGroup">
+        <button id="Rock">Rock</button>
+        <button id="Paper">Paper</button>
+        <button id="Scissors">Scissors</button>
+      </div>
+      
+      <div id="choiceHeader">
+        <h1>You:</h1>
+        <h1>Computer:</h1>
+      </div>
+      <div id="choiceResult"></div>
+      <div id="winnerResult"></div>
+      <div id="scoreHeader">
+        <h1>You:</h1>
+        <h1>Computer:</h1>
+      </div>  
+      <div id="score"></div>
+      <div id="results"></div>
+      
+      <div id="resetCont">
+        <button id="Reset" class="hide">Reload</button>
+      </div>
+   </div>
   </div>  
   
   <script src="javascript.js"></script>

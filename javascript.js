@@ -4,22 +4,23 @@ const Rock = document.querySelector('#Rock');
 const Paper = document.querySelector('#Paper');
 const Scissors = document.querySelector('#Scissors');
 const msg = document.querySelector('#message');
-const container = document.querySelector('#container');
+const winnerResult = document.querySelector('#winnerResult');
+const choiceResult = document.querySelector('#choiceResult');
 const results = document.querySelector('#results');
 const score = document.querySelector('#score');
 const Reset = document.querySelector('#Reset');
 
 const player = document.createElement('div');
 player.classList.add('player');
-container.appendChild(player);
+choiceResult.appendChild(player);
 
 const computer = document.createElement('div');
 computer.classList.add('computer');
-container.appendChild(computer);
+choiceResult.appendChild(computer);
 
 const resultText = document.createElement('div');
 resultText.classList.add('resultText');
-container.appendChild(resultText);
+winnerResult.appendChild(resultText);
 
 const finalResultText = document.createElement('div');
 finalResultText.classList.add('finalResultText');
@@ -27,11 +28,11 @@ results.appendChild(finalResultText);
 
 const playerScore = document.createElement('div');
 playerScore.classList.add('player');
-container.appendChild(playerScore);
+score.appendChild(playerScore);
 
 const computerScore = document.createElement('div');
 computerScore.classList.add('computer');
-container.appendChild(computerScore);
+score.appendChild(computerScore);
 
 let choice = null;
 let computerSelection = null;
@@ -76,8 +77,8 @@ function playRound(choice) {
     let playerWord = choice;
 
     //player.textContent = 'You chose: ' + choice + ' , Computer chose: ' +computerWord;
-    player.textContent = 'You chose: ' + choice;
-    computer.textContent = 'Computer chose: ' + computerWord;
+    player.textContent = choice;
+    computer.textContent = computerWord;
 
     if (playerSelection === computerSelection) {
         return 1;   
@@ -115,20 +116,21 @@ function showResults(results) {
 }
 
 function finalWinner(playerPoints, computerPoints) {
-    playerScore.textContent = 'Your points: ' + playerPoints;
-    computerScore.textContent = 'Computer points: ' + computerPoints;
+    //playerScore.textContent = 'Your points: ' + playerPoints;
+    playerScore.textContent = playerPoints;
+    computerScore.textContent = computerPoints;
     
     if(playerPoints >= pointLimit || computerPoints >= pointLimit) {
         if (playerPoints === computerPoints) {
-            finalResultText.textContent = '----- Its a tie! -----';
+            finalResultText.textContent = 'Its a tie!';
             Reset.classList.toggle('reveal');
         }
         else if (playerPoints > computerPoints) {
-            finalResultText.textContent = '----- Congratulations! You won! -----';
+            finalResultText.textContent = 'Congratulations! You won!';
             Reset.classList.toggle('reveal');
         }
         else if (playerPoints < computerPoints) {
-            finalResultText.textContent = '----- BUMMER! You lost! -----';
+            finalResultText.textContent = 'BUMMER! You lost!';
             Reset.classList.toggle('reveal');
         }
     }
