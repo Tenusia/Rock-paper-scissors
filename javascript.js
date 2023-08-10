@@ -121,6 +121,10 @@ function finalWinner(playerPoints, computerPoints) {
     computerScore.textContent = computerPoints;
     
     if(playerPoints >= pointLimit || computerPoints >= pointLimit) {
+        Rock.disabled = true;
+        Paper.disabled = true;
+        Scissors.disabled = true;
+
         if (playerPoints === computerPoints) {
             finalResultText.textContent = 'Its a tie!';
             Reset.classList.toggle('reveal');
